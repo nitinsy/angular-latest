@@ -60,10 +60,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hello-world-app:build:production"
+              "browserTarget": "hello-world-app:build:production",
+              "port": 8080,
+              "host": "0.0.0.0",
+              "disableHostCheck": true
             },
             "development": {
-              "browserTarget": "hello-world-app:build:development"
+              "browserTarget": "hello-world-app:build:development",
+              "port": 8080,
+              "host": "0.0.0.0",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
