@@ -19,7 +19,7 @@ RUN npm install --omit=dev
 USER default
 
 # Start with the minimal Node.js image
-FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
+FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest
 
 # Copy all app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
