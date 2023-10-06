@@ -1,5 +1,5 @@
 # Install the application dependencies in a full UBI Node docker image
-FROM registry.access.redhat.com/ubi8/nodejs-18:latest as base
+FROM registry.access.redhat.com/ubi8/nodejs-18:latest AS base
 
 # Elevate privileges to run npm
 USER root
@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the dependencies into a minimal Node.js image
-FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest as final
+FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest AS final
 
 # Install app dependencies
 COPY --from=base /opt/app-root/src/node_modules /opt/app-root/src/node_modules
