@@ -8,6 +8,7 @@
 # Build the app using the full Node.js image
 FROM registry.access.redhat.com/ubi9/nodejs-18:latest
 
+USER root
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
