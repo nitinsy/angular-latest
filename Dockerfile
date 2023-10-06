@@ -5,8 +5,6 @@
 # COPY . /opt/app-root/src/
 # RUN npm install
 
-USER root
-
 # Build the app using the full Node.js image
 FROM registry.access.redhat.com/ubi9/nodejs-18:latest
 
@@ -15,8 +13,6 @@ COPY package*.json ./
 
 # Install all app dependencies
 RUN npm install --omit=dev
-
-USER default
 
 # Start with the minimal Node.js image
 FROM registry.access.redhat.com/ubi8/nodejs-18-minimal:latest
